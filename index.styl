@@ -1,0 +1,199 @@
+@import 'reset.styl'
+
+// Defaults
+default-color = black
+first-color = #FE535F
+second-color = #808184
+third-color = #EAEAEA
+secondary-background = #f7f6f6
+base-font-size = 5vmin
+first-font-family = 'Lora', serif
+second-font-family = 'Monserrat', sans-serif
+
+// Helpers
+placeholder-color(n)
+  &::-webkit-input-placeholder
+    color: n
+  &::-moz-placeholder
+    color: n
+    opacity:  1
+  &:-moz-placeholder
+    color: n
+    opacity:  1
+  &:-ms-input-placeholder
+    color: n
+
+// Default styles
+html
+  // min-height: 100vh
+  font-family: second-font-family
+  font-size: base-font-size
+  color: second-color
+body
+  margin: 0
+  display: flex
+  // min-height: 100vh
+  flex-flow: column nowrap
+a, h1, h2, h3, h4, h5, h6, p, hr, input, textarea, select, button, label, fieldset
+  font-family: inherit
+  color: inherit
+  text-decoration: none
+  margin-top: 1em
+  line-height: 1.5em
+  &:focus
+    outline: none
+textarea, input, select
+  background-color: secondary-background
+input, label, select
+  height: 1.5em
+input, label, select, textarea
+  font-family: 'Lora'
+input, textarea, select, button, .button
+  border: none
+  font-size: inherit
+  border-radius: 0.5em
+
+button, .button
+  color: first-color
+  background-color: transparent
+  border: first-color 0.25em solid
+  padding: 0.5em
+  font-weight: bold
+  cursor: pointer
+  &:active
+    color: white
+    background-color: first-color
+textarea
+  padding: 0.5em
+input
+  // placeholder-color first-color
+  color: second-color
+  transition: box-shadow 0.3s, border 0.3s
+  &:focus
+    box-shadow: 0 0 1em 1px #DDDDDD
+
+// Styles
+main
+  display: flex
+  flex-flow: column nowrap
+.logo
+  width: 75vw
+  align-self: center
+  margin: 1em
+.motto
+  font-family: font123583
+  text-align: center
+  h1
+    color: first-color
+    .dotcom
+      font-weight: normal
+  .tagline
+    color: second-color
+hr
+  color: second-color
+form
+  margin: 1em
+  display: flex
+  flex-flow: column nowrap
+  .product
+    display: flex
+    flex-flow: column nowrap
+  .form-field
+    display: flex
+    align-items: baseline
+    label
+      flex: 0 0 5em
+      color: first-color
+    input, select
+      width: 100%
+      padding-left: 0.5em
+    .unit
+      margin-left: 0.5em
+    .toggle
+      color: second-color
+      border-color: second-color
+      &:active
+        border-color: first-color
+      &.selected
+        color: white
+        border-color: first-color
+        background-color: first-color
+      input
+        display: none
+  .priority
+    .form-field
+      justify-content: space-around
+    .description
+      color: first-color
+      font-weight: normal
+  hr
+    border: 1px dashed
+    margin-top: 2em
+    width: 100%
+
+.quote-title
+  text-align: center
+  border-bottom: none
+  border-left: none
+  border-right: none
+  text-align: center
+  font-family: 'Montserrat'
+  font-weight: bold
+  legend
+    padding: 0 1em
+    background: white
+.step-info
+  display: flex
+  flex-flow: column nowrap
+  align-items: center
+  color: first-color
+  margin-bottom: 1em
+  .step
+    font-family: 'Montserrat'
+    font-size: 3em
+    margin-top: 0.5em
+  .info
+    font-weight: bold
+    font-style: italic
+    font-family: 'Lora'
+    font-size: 1.2em
+    margin-top: 0.5em
+    border-bottom: 0.1em solid
+    padding-bottom: 0.2em
+
+.add-other
+  margin-top: inherit
+  display: flex
+  align-items: center
+  button
+    border: none
+    margin: 0
+  .text
+    margin-left: 1em
+
+.hidden
+  display: none !important
+header
+  display: flex
+  justify-content: space-around
+  align-items: center
+  color: white
+  text-align: center
+  background-color: first-color
+  padding: 1em
+  height: 5vmin
+
+footer
+  padding-bottom: 1em
+  > *
+    margin-top: 1em
+  background: secondary-background
+  display: flex
+  flex-flow: column
+  align-items: center
+  .phone
+    span
+      color: second-color
+  .email
+    color: first-color
+    font-weight: bold

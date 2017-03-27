@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="index.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700i|Montserrat:400,500,700|Viga" rel="stylesheet">
+  <!-- DIN Next LT Pro regular: font123583 -->
+  <link href="https://www.fontify.me/wf/bffc39a8657036d2df4860a4951ea25c" rel="stylesheet" type="text/css">
+  <!-- DIN Next LT Pro bold: font122629 -->
+  <!-- <link href="https://www.fontify.me/wf/bae1d0adb3e1bcba40ac11243d972c65" rel="stylesheet" type="text/css"> -->
+  <script src="https://use.fontawesome.com/e72c7bffbf.js"></script>
+  <!-- <script src="https://unpkg.com/vue"></script> -->
+
+</head>
+<body>
+  <!-- <header>
+
+  </header> -->
+  <main>
+    <img class="logo" src="goodpanda.svg"/>
+    <!-- <div class="motto">
+      <h1>Goodpanda<span class="dotcom">.com</span></h1>
+      <p class="tagline">Good deals, weel done</p>
+    </div> -->
+    <!-- <hr /> -->
+    <form>
+      <fieldset class="quote-title">
+        <legend>COTIZACIÓN INTELIGENTE</legend>
+      </fieldset>
+      <div class="step-info">
+        <p class="step">1.</p>
+        <p class="info">Información de contacto</p>
+      </div>
+      <div class="form-field">
+        <label for="name">Nombre:</label>
+        <input placeholder="Alan Brito" name="name" id="name"/>
+      </div>
+      <div class="form-field">
+        <label for="company">Empresa:</label>
+        <input placeholder="Empresa" name="company" id="company"/>
+      </div>
+      <div class="form-field">
+        <label for="email">Mail:</label>
+        <input placeholder="nombre@empresa.cl" name="email" id="email"/>
+      </div>
+      <div class="form-field">
+        <label for="phone">Teléfono:</label>
+        <input placeholder="+56 9 0000000" name="phone" id="phone"/>
+      </div>
+      <div class="form-field">
+        <label for="country">País:</label>
+        <select name="country" id="country">
+          <option value="Chile">Chile</option>
+          <option value="México">México</option>
+          <option value="Brasil">Brasil</option>
+          <option value="Perú">Perú</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Comuna:</label>
+        <select>
+
+        </select>
+      </div>
+      <div class="step-info">
+        <p class="step">2.</p>
+        <p class="info">Información de producto</p>
+      </div>
+      <div class="product">
+        <div class="form-field">
+          <label for="product0">Producto:</label>
+          <input placeholder="Nombre o link" name="product0" id="product0"/>
+        </div>
+        <div class="form-field">
+          <label for="quantity0">Cantidad:</label>
+          <input placeholder="100" type="number" name="quantity0" id="quantity0"/>
+          <select class="unit" name="unit0" id="unit0">
+            <option value="unidad">Unidades</option>
+          </select>
+        </div>
+        <textarea placeholder="Queridos Goodhumans,
+Estoy buscando un producto con las siguientes características...
+
+1.
+2.
+3."
+          rows="8" name="description0" id="description0"></textarea>
+        <fieldset class="quote-title priority">
+          <legend>Priorizar</legend>
+          <div class="form-field">
+            <label class="button toggle" for="time0" onclick="togglePriority('time0')">
+              Tiempo
+              <input type="radio" name="priority0" value="time" id="time0"/>
+            </label>
+            <label class="button toggle" for="cost0" onclick="togglePriority('cost0')">
+              Costo
+              <input type="radio" name="priority0" value="cost" id="cost0"/>
+            </label>
+          </div>
+          <p class="description time0 hidden">
+            *Al priorizar <strong>Tiempo</strong> tu delivery llegará lo más
+            pronto posible. Aprox <strong>1 a 15 días hábiles.</strong>
+          </p>
+          <p class="description cost0 hidden">
+            *Al priorizar <strong>Costo</strong> el precio será el más bajo posible. Tiempo de envío aprox <strong>15 a 60 días hábiles.</strong>
+          </p>
+        </fieldset>
+      </div>
+      <div id="other-products" class="product hidden">
+      </div>
+      <div class="add-other">
+        <!-- <button type="button"><span>+</span>Agregar otro</button> -->
+        <button type="button" onclick="addOther()">
+          <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+        </button>
+        <span class="text">AGREGAR OTRO</span>
+      </div>
+      <button class="send" type="submit">ENVIAR COTIZACIÓN<br />INTELIGENTE</button>
+    </form>
+  </main>
+  <footer>
+    <!-- <div class="buttons">
+    </div> -->
+    <a class="phone">
+      <!-- <i class="fa fa-phone" aria-hidden="true"></i> -->
+      <span>+562 2 951 1181</span>
+    </a>
+    <a href="mailto:contacto@goodpanda.com" target="_blank" class="email">
+      <!-- <i class="fa fa-envelope-o" aria-hidden="true"></i> -->
+      <span>CONTACTO@GOODPANDA.COM</span>
+    </a>
+  </footer>
+  <script>
+    let i = 0;
+    togglePriority = (nameAndNumber) => {
+      let numberPos = nameAndNumber.search(/[0-9]/);
+      let number = nameAndNumber.substring(numberPos);
+      let name = nameAndNumber.substring(0, numberPos);
+      let otherNameAndNumber = name=="time" ? `cost${number}` : `time${number}`;
+      label = document.querySelector(`[for=${nameAndNumber}]`);
+      label.classList.add('selected');
+      description = document.querySelector(`.description.${nameAndNumber}`);
+      description.classList.remove('hidden');
+      label = document.querySelector(`[for=${otherNameAndNumber}]`);
+      label.classList.remove("selected");
+      description = document.querySelector(`.description.${otherNameAndNumber}`);
+      description.classList.add('hidden');
+    }
+    addOther = () => {
+      product = document.getElementsByClassName('product')[0];
+      toAppend = document.getElementById('other-products');
+      div = document.createElement('div');
+      div.innerHTML = "<hr/>" + product.innerHTML;
+      div.innerHTML = div.innerHTML.replace(/([a-z])\d/g, `$1${i+1}`);
+      console.log(typeof(div.innerHTML));
+      div.classList.add('product');
+      toAppend.appendChild(div);
+      toAppend.classList.remove('hidden');
+      i++;
+    }
+  </script>
+</body>
+</html>

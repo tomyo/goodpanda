@@ -1,0 +1,280 @@
+html,
+body,
+address,
+blockquote,
+div,
+form,
+fieldset,
+caption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+ul,
+li,
+ol,
+table,
+tr,
+td,
+th,
+p,
+img {
+  margin-bottom: 0;
+  padding: 0;
+}
+img {
+  border: none;
+}
+html {
+  font-family: 'Monserrat', sans-serif;
+  font-size: 5vmin;
+  color: #808184;
+}
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+}
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+hr,
+input,
+textarea,
+select,
+button,
+label,
+fieldset {
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+  margin-top: 1em;
+  line-height: 1.5em;
+}
+a:focus,
+h1:focus,
+h2:focus,
+h3:focus,
+h4:focus,
+h5:focus,
+h6:focus,
+p:focus,
+hr:focus,
+input:focus,
+textarea:focus,
+select:focus,
+button:focus,
+label:focus,
+fieldset:focus {
+  outline: none;
+}
+textarea,
+input,
+select {
+  background-color: #f7f6f6;
+}
+input,
+label,
+select {
+  height: 1.5em;
+}
+input,
+label,
+select,
+textarea {
+  font-family: 'Lora';
+}
+input,
+textarea,
+select,
+button,
+.button {
+  border: none;
+  font-size: inherit;
+  border-radius: 0.5em;
+}
+button,
+.button {
+  color: #fe535f;
+  background-color: transparent;
+  border: #fe535f 0.25em solid;
+  padding: 0.5em;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:active,
+.button:active {
+  color: #fff;
+  background-color: #fe535f;
+}
+textarea {
+  padding: 0.5em;
+}
+input {
+  color: #808184;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+input:focus {
+  box-shadow: 0 0 1em 1px #ddd;
+}
+main {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.logo {
+  width: 75vw;
+  align-self: center;
+  margin: 1em;
+}
+.motto {
+  font-family: font123583;
+  text-align: center;
+}
+.motto h1 {
+  color: #fe535f;
+}
+.motto h1 .dotcom {
+  font-weight: normal;
+}
+.motto .tagline {
+  color: #808184;
+}
+hr {
+  color: #808184;
+}
+form {
+  margin: 1em;
+  display: flex;
+  flex-flow: column nowrap;
+}
+form .product {
+  display: flex;
+  flex-flow: column nowrap;
+}
+form .form-field {
+  display: flex;
+  align-items: baseline;
+}
+form .form-field label {
+  flex: 0 0 5em;
+  color: #fe535f;
+}
+form .form-field input,
+form .form-field select {
+  width: 100%;
+  padding-left: 0.5em;
+}
+form .form-field .unit {
+  margin-left: 0.5em;
+}
+form .form-field .toggle {
+  color: #808184;
+  border-color: #808184;
+}
+form .form-field .toggle:active {
+  border-color: #fe535f;
+}
+form .form-field .toggle.selected {
+  color: #fff;
+  border-color: #fe535f;
+  background-color: #fe535f;
+}
+form .form-field .toggle input {
+  display: none;
+}
+form .priority .form-field {
+  justify-content: space-around;
+}
+form .priority .description {
+  color: #fe535f;
+  font-weight: normal;
+}
+form hr {
+  border: 1px dashed;
+  margin-top: 2em;
+  width: 100%;
+}
+.quote-title {
+  text-align: center;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+.quote-title legend {
+  padding: 0 1em;
+  background: #fff;
+}
+.step-info {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  color: #fe535f;
+  margin-bottom: 1em;
+}
+.step-info .step {
+  font-family: 'Montserrat';
+  font-size: 3em;
+  margin-top: 0.5em;
+}
+.step-info .info {
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Lora';
+  font-size: 1.2em;
+  margin-top: 0.5em;
+  border-bottom: 0.1em solid;
+  padding-bottom: 0.2em;
+}
+.add-other {
+  margin-top: inherit;
+  display: flex;
+  align-items: center;
+}
+.add-other button {
+  border: none;
+  margin: 0;
+}
+.add-other .text {
+  margin-left: 1em;
+}
+.hidden {
+  display: none !important;
+}
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  background-color: #fe535f;
+  padding: 1em;
+  height: 5vmin;
+}
+footer {
+  padding-bottom: 1em;
+  background: #f7f6f6;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+footer > * {
+  margin-top: 1em;
+}
+footer .phone span {
+  color: #808184;
+}
+footer .email {
+  color: #fe535f;
+  font-weight: bold;
+}
