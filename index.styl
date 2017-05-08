@@ -5,10 +5,11 @@ default-color = black
 first-color = #FE535F
 second-color = #808184
 third-color = #EAEAEA
+primary-background = white
 secondary-background = #f7f6f6
-base-font-size = 4vmin
-first-font-family = 'Lora', serif
-second-font-family = 'Monserrat', sans-serif
+base-font-size = 4vmin//calc(16px + (24 - 16) * (100vmin - 400px)/(800-400))//inherit //3vmin
+first-font-family = Lora, serif
+second-font-family = Montserrat, sans-serif
 
 // Helpers
 placeholder-color(n)
@@ -39,7 +40,7 @@ a, h1, h2, h3, h4, h5, h6, p, hr, input, textarea, select, button, label, fields
   color: inherit
   text-decoration: none
   margin-top: 1em
-  line-height: 1.5em
+  // line-height: 1.5em
   &:focus
     outline: none
 textarea, input, select
@@ -47,22 +48,25 @@ textarea, input, select
 input, label, select
   height: 1.5em
 input, label, select, textarea
-  font-family: 'Lora'
+  font-family: first-font-family
 input, textarea, select, button, .button
   border: none
   font-size: inherit
-  border-radius: 0.5em
+  border-radius: 0.8em
 
 button, .button
   color: first-color
-  background-color: transparent
+  background-color: primary-background
   border: first-color 0.25em solid
   padding: 0.5em
   font-weight: bold
   cursor: pointer
-  &:active
+  &:active, &.active
     color: white
     background-color: first-color
+  // &.color-inverted
+  //   color: primary-background
+  //   background-color:
 textarea
   padding: 0.5em
 input
@@ -76,10 +80,12 @@ input
 main
   display: flex
   flex-flow: column nowrap
+  &>*
+    margin-bottom: 1em
 .logo
   width: 75vw
   align-self: center
-  margin: 1em
+  margin: 2em
 .motto
   font-family: font123583
   text-align: center
@@ -91,6 +97,79 @@ main
     color: second-color
 hr
   color: second-color
+
+.slide
+  .slick-dots  // override slick theme
+    bottom: 0.5em
+    button:before
+      color: white !important
+      font-size: 1rem
+    li
+      margin: 0.5em !important
+  margin-bottom: 0 !important // override slick theme
+  h1
+    margin: 2em 1.5em
+    color: primary-background
+  .item
+    height: 75vmin
+    background-size: cover
+  .slide-0
+    h1
+      margin-top: 1.5em
+    background-image: url('img/slide-0.jpg')
+  .slide-1
+    background-image: url('img/slide-1.jpg')
+  .slide-2
+    background-image: url('img/slide-2.jpg')
+
+.call-to-action
+  display: flex
+  justify-content: center
+  background-color: first-color
+  text-align: center
+  margin-bottom: 0
+  .button
+    margin-bottom: 1em
+    padding: 0.5em 3em
+.welcome
+  color: first-color
+  margin: 0 2em 3em
+.change
+  background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('img/change.png')
+  background-size: cover
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-bottom: 0
+  h2
+    margin: 2em
+    color: primary-background
+    text-align: center
+
+.features
+  margin: 4em 2em 0
+  div
+    margin-bottom: 4em
+    h4
+      color: first-color
+    img
+      max-width: 22vmin
+.footnote
+  font-size: 0.65em
+  color: first-color
+.center
+  text-align: center
+.quote-title
+  text-align: center
+  border-bottom: none
+  border-left: none
+  border-right: none
+  text-align: center
+  font-family: 'Montserrat'
+  font-weight: bold
+  legend
+    padding: 0 1em
+    background: white
 form
   margin: 1em
   display: flex
@@ -130,18 +209,6 @@ form
     border: 1px dashed
     margin-top: 2em
     width: 100%
-
-.quote-title
-  text-align: center
-  border-bottom: none
-  border-left: none
-  border-right: none
-  text-align: center
-  font-family: 'Montserrat'
-  font-weight: bold
-  legend
-    padding: 0 1em
-    background: white
 .step-info
   display: flex
   flex-flow: column nowrap
@@ -155,7 +222,7 @@ form
   .info
     font-weight: bold
     font-style: italic
-    font-family: 'Lora'
+    font-family: first-font-family
     font-size: 1.2em
     margin-top: 0.5em
     border-bottom: 0.1em solid
@@ -173,6 +240,10 @@ form
 
 .hidden
   display: none !important
+.responsive
+  width: 100%
+  height: auto
+  // margin: 0 auto
 header
   display: flex
   justify-content: space-around

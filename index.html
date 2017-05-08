@@ -4,161 +4,252 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="index.css"/>
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,700i|Montserrat:400,500,700|Viga" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700i|Montserrat:400,500,700,800|Viga" rel="stylesheet">
   <!-- DIN Next LT Pro regular: font123583 -->
   <link href="https://www.fontify.me/wf/bffc39a8657036d2df4860a4951ea25c" rel="stylesheet" type="text/css">
   <!-- DIN Next LT Pro bold: font122629 -->
   <!-- <link href="https://www.fontify.me/wf/bae1d0adb3e1bcba40ac11243d972c65" rel="stylesheet" type="text/css"> -->
   <script src="https://use.fontawesome.com/e72c7bffbf.js"></script>
   <!-- <script src="https://unpkg.com/vue"></script> -->
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <script src="index.js"></script>
 </head>
 <body>
   <!-- <header>
 
-  </header> -->
-  <main>
-    <img class="logo" src="goodpanda.svg"/>
-    <!-- <div class="motto">
-      <h1>Goodpanda<span class="dotcom">.com</span></h1>
-      <p class="tagline">Good deals, weel done</p>
-    </div> -->
-    <!-- <hr /> -->
-    <form name="contactAndQuote" action="http://localhost:3000/form" netlify>
-      <fieldset class="quote-title">
-        <legend>COTIZACIÓN INTELIGENTE</legend>
-      </fieldset>
-      <div class="step-info">
-        <p class="step">1.</p>
-        <p class="info">Información de contacto</p>
-      </div>
-      <div class="form-field">
-        <label for="name">Nombre:</label>
-        <input placeholder="Alan Brito" name="name" id="name"/>
-      </div>
-      <div class="form-field">
-        <label for="company">Empresa:</label>
-        <input placeholder="Empresa" name="company" id="company"/>
-      </div>
-      <div class="form-field">
-        <label for="email">Mail:</label>
-        <input placeholder="nombre@empresa.cl" name="email" id="email"/>
-      </div>
-      <div class="form-field">
-        <label for="phone">Teléfono:</label>
-        <input placeholder="+56 9 0000000" name="phone" id="phone"/>
-      </div>
-      <div class="form-field">
-        <label for="country">País:</label>
-        <select name="country" id="country">
-          <option value="Chile">Chile</option>
-          <option value="México">México</option>
-          <option value="Brasil">Brasil</option>
-          <option value="Perú">Perú</option>
-        </select>
-      </div>
-      <div class="form-field">
-        <label>Comuna:</label>
-        <select>
-
-        </select>
-      </div>
-      <div class="step-info">
-        <p class="step">2.</p>
-        <p class="info">Información de producto</p>
-      </div>
-      <div class="product">
-        <div class="form-field">
-          <label for="product0">Producto:</label>
-          <input placeholder="Nombre o link" name="product0" id="product0"/>
-        </div>
-        <div class="form-field">
-          <label for="quantity0">Cantidad:</label>
-          <input placeholder="100" type="number" name="quantity0" id="quantity0"/>
-          <select class="unit" name="unit0" id="unit0">
-            <option value="unidad">Unidades</option>
-          </select>
-        </div>
-        <textarea placeholder="Queridos Goodhumans,
-Estoy buscando un producto con las siguientes características...
-
-1.
-2.
-3."
-          rows="8" name="description0" id="description0"></textarea>
-        <fieldset class="quote-title priority">
-          <legend>Priorizar</legend>
-          <div class="form-field">
-            <label class="button toggle" for="time0" onclick="togglePriority('time0')">
-              Tiempo
-              <input type="radio" name="priority0" value="time" id="time0"/>
-            </label>
-            <label class="button toggle" for="cost0" onclick="togglePriority('cost0')">
-              Costo
-              <input type="radio" name="priority0" value="cost" id="cost0"/>
-            </label>
-          </div>
-          <p class="description time0 hidden">
-            *Al priorizar <strong>Tiempo</strong> tu delivery llegará lo más
-            pronto posible. Aprox <strong>1 a 15 días hábiles.</strong>
-          </p>
-          <p class="description cost0 hidden">
-            *Al priorizar <strong>Costo</strong> el precio será el más bajo posible. Tiempo de envío aprox <strong>15 a 60 días hábiles.</strong>
-          </p>
-        </fieldset>
-      </div>
-      <div id="other-products" class="product hidden">
-      </div>
-      <div class="add-other">
-        <!-- <button type="button"><span>+</span>Agregar otro</button> -->
-        <button type="button" onclick="addOther()">
-          <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
-        </button>
-        <span class="text">AGREGAR OTRO</span>
-      </div>
-      <button class="send" type="submit">ENVIAR COTIZACIÓN<br />INTELIGENTE</button>
-    </form>
-  </main>
-  <footer>
-    <!-- <div class="buttons">
-    </div> -->
-    <a class="phone">
-      <!-- <i class="fa fa-phone" aria-hidden="true"></i> -->
-      <span>+562 2 951 1181</span>
+</header> -->
+<main>
+  <img class="logo" src="goodpanda.svg"/>
+  <div class="slide">
+    <!-- <img src="img/slide-0-text.jpg" class="responsive"/>
+    <img src="img/slide-1-text.jpg" class="responsive"/>
+    <img src="img/slide-2-text.jpg" class="responsive"/> -->
+    <a href="##eco-friendly" class="item slide-0">
+      <!-- <img src="img/slide-0.jpg" class="responsive"/> -->
+      <h1>
+        El primer<br /> Marketplace<br /> Eco-Frienly<br /> del Mundo
+      </h1>
     </a>
-    <a href="mailto:contacto@goodpanda.com" target="_blank" class="email">
-      <!-- <i class="fa fa-envelope-o" aria-hidden="true"></i> -->
-      <span>CONTACTO@GOODPANDA.COM</span>
+    <a href="##providers" class="item slide-1">
+      <h1>
+        Los mejores<br /> 12 proveedores<br /> por categoría
+      </h1>
     </a>
-  </footer>
-  <script>
-    let i = 0;
-    togglePriority = (nameAndNumber) => {
-      let numberPos = nameAndNumber.search(/[0-9]/);
-      let number = nameAndNumber.substring(numberPos);
-      let name = nameAndNumber.substring(0, numberPos);
-      let otherNameAndNumber = name=="time" ? `cost${number}` : `time${number}`;
-      label = document.querySelector(`[for=${nameAndNumber}]`);
-      label.classList.add('selected');
-      description = document.querySelector(`.description.${nameAndNumber}`);
-      description.classList.remove('hidden');
-      label = document.querySelector(`[for=${otherNameAndNumber}]`);
-      label.classList.remove("selected");
-      description = document.querySelector(`.description.${otherNameAndNumber}`);
-      description.classList.add('hidden');
-    }
-    addOther = () => {
-      product = document.getElementsByClassName('product')[0];
-      toAppend = document.getElementById('other-products');
-      div = document.createElement('div');
-      div.innerHTML = "<hr/>" + product.innerHTML;
-      div.innerHTML = div.innerHTML.replace(/([a-z])\d/g, `$1${i+1}`);
-      console.log(typeof(div.innerHTML));
-      div.classList.add('product');
-      toAppend.appendChild(div);
-      toAppend.classList.remove('hidden');
-      i++;
-    }
-  </script>
+    <a href="##form" class="item slide-2">
+      <h1>
+        Ahora, hacer<br />buenos negocios<br />es cosa de un click
+      </h1>
+    </a>
+  </div>
+  <div class="call-to-action">
+    <a href="#form" class="button">COTIZACIÓN <br />INTELIGENTE</a>
+  </div>
+  <div class="welcome">
+    <h1>Bienvenido!</h1>
+    <p>
+      A una nueva forma segura, confiable y transparente de hacer negocios
+      de forma local o en el extranjero.
+    </p>
+  </div>
+  <div class="change">
+    <h2>Cambiamos la forma<br />de hacer negocios</h2>
+  </div>
+
+  <section class="features">
+    <div>
+      <img src="img/billete.png"/>
+      <h4>COTIZACIÓN INTELIGENTE</h4>
+      <p>
+        Solicita tu Cotización Inteligente y en <strong>24 hrs,
+        de forma personalizada</strong>, tendrás un ejecutivo
+        que se encargará de ofrecerta siempre la mejor
+        alternativa para tu negocio.
+      </p>
+    </div>
+    <div>
+      <img src="img/ojo.png"/>
+      <h4>TRANSPARENCIA EN COSTOS</h4>
+      <p>
+        Podrás tener acceso a todos los costos asocia-
+        dos a tu futura compra para que tengas todas
+        las <strong>herramientas necesarias para tomar la
+        mejor decisión.</strong>
+      </p>
+      <p class="footnote">
+        * Costo FOB, transporte, manejo internacional, aranceles de
+        importación, IVA.
+      </p>
+    </div>
+    <div>
+      <img src="img/calendario.png"/>
+      <h4>TIEMPOS DE ENTREGA LOCAL / INTERNACIONAL</h4>
+      <p>
+        Maneja tus costos de acuerdo a los tiempos de entrega.
+        <strong>Nacional v/s Internacional:</strong>
+      </p>
+      <p class="button center active">
+        Tiempo v/s Costos.
+      </p>
+    </div>
+    <div id="eco-friendly">
+      <img src="img/casa-hoja.png"/>
+      <h4>El PRIMER MARKETPLACE ECO-FRIENDLY</h4>
+      <p>
+        Nos preocuopamos en la elección de nuestros
+        proveedores, que sean un <strong>aporte a un mundo
+        mejor y a futuras generaciones.</strong>
+      </p>
+    </div>
+    <div id="providers">
+      <img src="img/proveedores.png"/>
+      <h4>LOS 12 MEJORES PROVEEDORES POR CATEGORÍA A NIVEL MUNDIAL</h4>
+      <p>
+        Dentro de los miles de proveedores en el
+        mundo, hemos escogido los 12 mejores (6
+        internacionales, 6 locales) en cada categoría,
+        llegando a tener convenios <strong>exclusivos en
+        precios y servicio post-venta garantizada.</strong>
+      </p>
+    </div>
+    <div>
+      <img src="img/tarjeta-ticket.png"/>
+      <h4>PAGO NACIONAL, COMPRA ASEGURADA</h4>
+      <p>
+        Asegura la transacción de tu compra al pagar
+        nacional con una empresa local y de prestigio,
+        que te respoderá ante cualquier inconveniente
+        y será tu cara visible para cualquier servicio.
+        Ahorra los trámites de aduana y <strong>agiliza todo el
+        proceso de forma confiable y segura.</strong>
+      </p>
+    </div>
+    <div>
+      <img src="img/mundo-corazon.png"/>
+      <h4>COMPROMISO GOODPANDA POR UN PLANETA MEJOR</h4>
+      <p>
+        Pequeños actos en el día a día son acciones
+        que marcan la diferencia en un mundo mejor,
+        por lo que hemos tomado el compromiso de
+        <strong>aportar el 1% del total de nuestros ingresos
+        a acciones benéficas.</strong>
+      </p>
+    </div>
+  </section>
+  <!-- <div class="motto">
+  <h1>Goodpanda<span class="dotcom">.com</span></h1>
+  <p class="tagline">Good deals, weel done</p>
+</div> -->
+<!-- <hr /> -->
+<form id="form" name="contactAndQuote" action="#" netlify>
+  <fieldset class="quote-title">
+    <legend>COTIZACIÓN INTELIGENTE</legend>
+  </fieldset>
+  <div class="step-info">
+    <p class="step">1.</p>
+    <p class="info">Información de contacto</p>
+  </div>
+  <div class="form-field">
+    <label for="name">Nombre:</label>
+    <input placeholder="Nombre y apellido" name="name" id="name"/>
+  </div>
+  <div class="form-field">
+    <label for="company">Empresa:</label>
+    <input placeholder="Empresa" name="company" id="company"/>
+  </div>
+  <div class="form-field">
+    <label for="email">Mail:</label>
+    <input placeholder="nombre@empresa.cl" name="email" id="email"/>
+  </div>
+  <div class="form-field">
+    <label for="phone">Teléfono:</label>
+    <input placeholder="+56 9 0000000" name="phone" id="phone"/>
+  </div>
+  <div class="form-field">
+    <label for="country">País:</label>
+    <select name="country" id="country">
+      <option value="Chile">Chile</option>
+      <option value="México">México</option>
+      <option value="Brasil">Brasil</option>
+      <option value="Perú">Perú</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <label>Comuna:</label>
+    <select>
+
+    </select>
+  </div>
+  <div class="step-info">
+    <p class="step">2.</p>
+    <p class="info">Información de producto</p>
+  </div>
+  <div class="product">
+    <div class="form-field">
+      <label for="product0">Producto:</label>
+      <input placeholder="Nombre o link" name="product0" id="product0"/>
+    </div>
+    <div class="form-field">
+      <label for="quantity0">Cantidad:</label>
+      <input placeholder="100" type="number" name="quantity0" id="quantity0"/>
+      <select class="unit" name="unit0" id="unit0">
+        <option value="unidad">Unidades</option>
+      </select>
+    </div>
+    <textarea placeholder="Queridos Goodhumans,
+    Estoy buscando un producto con las siguientes características...
+
+    1.
+    2.
+    3."
+    rows="8" name="description0" id="description0"></textarea>
+    <fieldset class="quote-title priority">
+      <legend>Priorizar</legend>
+      <div class="form-field">
+        <label class="button toggle" for="time0" onclick="togglePriority('time0')">
+          Tiempo
+          <input type="radio" name="priority0" value="time" id="time0"/>
+        </label>
+        <label class="button toggle" for="cost0" onclick="togglePriority('cost0')">
+          Costo
+          <input type="radio" name="priority0" value="cost" id="cost0"/>
+        </label>
+      </div>
+      <p class="description time0 hidden">
+        *Al priorizar <strong>Tiempo</strong> tu delivery llegará lo más
+        pronto posible. Aprox <strong>1 a 15 días hábiles.</strong>
+      </p>
+      <p class="description cost0 hidden">
+        *Al priorizar <strong>Costo</strong> el precio será el más bajo posible. Tiempo de envío aprox <strong>15 a 60 días hábiles.</strong>
+      </p>
+    </fieldset>
+  </div>
+  <div id="other-products" class="product hidden">
+  </div>
+  <div class="add-other">
+    <!-- <button type="button"><span>+</span>Agregar otro</button> -->
+    <button type="button" onclick="addOther()">
+      <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+    </button>
+    <span class="text">AGREGAR OTRO</span>
+  </div>
+  <button type="submit">ENVIAR COTIZACIÓN<br />INTELIGENTE</button>
+</form>
+</main>
+<footer>
+  <!-- <div class="buttons">
+</div> -->
+<a class="phone">
+  <!-- <i class="fa fa-phone" aria-hidden="true"></i> -->
+  <span>+562 2 951 1181</span>
+</a>
+<a href="mailto:contacto@goodpanda.com" target="_blank" class="email">
+  <!-- <i class="fa fa-envelope-o" aria-hidden="true"></i> -->
+  <span>CONTACTO@GOODPANDA.COM</span>
+</a>
+</footer>
 </body>
 </html>
