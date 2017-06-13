@@ -4,6 +4,7 @@
 default-color = black
 first-color = #FE535F
 second-color = #808184
+placeholder-color = #b7b6b6
 third-color = #EAEAEA
 primary-background = white
 secondary-background = #f7f6f6
@@ -12,7 +13,7 @@ first-font-family = Lora, serif
 second-font-family = Montserrat, sans-serif
 
 // Helpers
-placeholder-color(n)
+set-placeholder-color(n)
   &::-webkit-input-placeholder
     color: n
   &::-moz-placeholder
@@ -35,6 +36,8 @@ body
   display: flex
   // min-height: 100vh
   flex-flow: column nowrap
+  min-height: 100vh
+  justify-content: space-between
 a, h1, h2, h3, h4, h5, h6, p, hr, input, textarea, select, button, label, fieldset
   font-family: inherit
   color: inherit
@@ -45,6 +48,7 @@ a, h1, h2, h3, h4, h5, h6, p, hr, input, textarea, select, button, label, fields
     outline: none
 textarea, input, select
   background-color: secondary-background
+  set-placeholder-color placeholder-color
 input, label, select
   height: 1.5em
 input, label, select, textarea
@@ -61,22 +65,27 @@ button, .button
   padding: 0.5em
   font-weight: bold
   cursor: pointer
+  display: block
   &:active, &.active
     color: white
     background-color: first-color
-  // &.color-inverted
-  //   color: primary-background
-  //   background-color:
 textarea
   padding: 0.5em
 input
-  // placeholder-color first-color
   color: second-color
   transition: box-shadow 0.3s, border 0.3s
   &:focus
     box-shadow: 0 0 1em 1px #DDDDDD
 
 // Styles
+
+#thanks
+  p
+    color: first-color
+    font-weight: normal
+  .button
+    margin-top: 2em
+  margin: 2em
 main
   display: flex
   flex-flow: column nowrap
@@ -159,7 +168,7 @@ hr
   color: first-color
 .center
   text-align: center
-.quote-title
+fieldset
   text-align: center
   border-bottom: none
   border-left: none
@@ -177,6 +186,11 @@ form
   .product
     display: flex
     flex-flow: column nowrap
+  .photo-upload-label
+    text-align: center
+    cursor: pointer
+  .file-name
+    font-size: 0.5em
   .form-field
     display: flex
     align-items: baseline
@@ -209,6 +223,8 @@ form
     border: 1px dashed
     margin-top: 2em
     width: 100%
+.strong
+  font-weight: bold
 .step-info
   display: flex
   flex-flow: column nowrap
@@ -238,6 +254,10 @@ form
   .text
     margin-left: 1em
 
+.required:after
+  content: "*"
+  font-size: 0.5em
+  position: absolute
 .hidden
   display: none !important
 .responsive
@@ -268,3 +288,26 @@ footer
   .email
     color: first-color
     font-weight: bold
+
+.select2-container
+    font-family: first-font-family
+    .select2-selection--single
+      background-color: secondary-background
+      border: none
+      font-size: inherit
+      border-radius: 0.8em
+      height: 1.5em
+      font-family: inherit;
+      .select2-selection__rendered
+        line-height: inherit
+        height: inherit
+        color: inherit;
+      .select2-selection__arrow
+        height: inherit
+    .select2-dropdown
+      border: none
+      .select2-results__options
+        max-height: 15em
+      .select2-search__field
+        padding-left: 0.5em
+        border: none

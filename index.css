@@ -37,6 +37,8 @@ body {
   margin: 0;
   display: flex;
   flex-flow: column nowrap;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 a,
 h1,
@@ -80,6 +82,28 @@ input,
 select {
   background-color: #f7f6f6;
 }
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
+  color: #b7b6b6;
+}
+textarea::-moz-placeholder,
+input::-moz-placeholder,
+select::-moz-placeholder {
+  color: #b7b6b6;
+  opacity: 1;
+}
+textarea:-moz-placeholder,
+input:-moz-placeholder,
+select:-moz-placeholder {
+  color: #b7b6b6;
+  opacity: 1;
+}
+textarea:-ms-input-placeholder,
+input:-ms-input-placeholder,
+select:-ms-input-placeholder {
+  color: #b7b6b6;
+}
 input,
 label,
 select {
@@ -108,6 +132,7 @@ button,
   padding: 0.5em;
   font-weight: bold;
   cursor: pointer;
+  display: block;
 }
 button:active,
 .button:active,
@@ -125,6 +150,16 @@ input {
 }
 input:focus {
   box-shadow: 0 0 1em 1px #ddd;
+}
+#thanks {
+  margin: 2em;
+}
+#thanks p {
+  color: #fe535f;
+  font-weight: normal;
+}
+#thanks .button {
+  margin-top: 2em;
 }
 main {
   display: flex;
@@ -234,7 +269,7 @@ hr {
 .center {
   text-align: center;
 }
-.quote-title {
+fieldset {
   text-align: center;
   border-bottom: none;
   border-left: none;
@@ -243,7 +278,7 @@ hr {
   font-family: 'Montserrat';
   font-weight: bold;
 }
-.quote-title legend {
+fieldset legend {
   padding: 0 1em;
   background: #fff;
 }
@@ -255,6 +290,13 @@ form {
 form .product {
   display: flex;
   flex-flow: column nowrap;
+}
+form .photo-upload-label {
+  text-align: center;
+  cursor: pointer;
+}
+form .file-name {
+  font-size: 0.5em;
 }
 form .form-field {
   display: flex;
@@ -299,6 +341,9 @@ form hr {
   margin-top: 2em;
   width: 100%;
 }
+.strong {
+  font-weight: bold;
+}
 .step-info {
   display: flex;
   flex-flow: column nowrap;
@@ -331,6 +376,11 @@ form hr {
 }
 .add-other .text {
   margin-left: 1em;
+}
+.required:after {
+  content: "*";
+  font-size: 0.5em;
+  position: absolute;
 }
 .hidden {
   display: none !important;
@@ -365,4 +415,33 @@ footer .phone span {
 footer .email {
   color: #fe535f;
   font-weight: bold;
+}
+.select2-container {
+  font-family: Lora, serif;
+}
+.select2-container .select2-selection--single {
+  background-color: #f7f6f6;
+  border: none;
+  font-size: inherit;
+  border-radius: 0.8em;
+  height: 1.5em;
+  font-family: inherit;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+  line-height: inherit;
+  height: inherit;
+  color: inherit;
+}
+.select2-container .select2-selection--single .select2-selection__arrow {
+  height: inherit;
+}
+.select2-container .select2-dropdown {
+  border: none;
+}
+.select2-container .select2-dropdown .select2-results__options {
+  max-height: 15em;
+}
+.select2-container .select2-dropdown .select2-search__field {
+  padding-left: 0.5em;
+  border: none;
 }
