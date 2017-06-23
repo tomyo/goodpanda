@@ -306,6 +306,10 @@ form .form-field label {
   flex: 0 0 5em;
   color: #fe535f;
 }
+form .form-field label img {
+  width: 2em;
+  vertical-align: middle;
+}
 form .form-field input,
 form .form-field select {
   width: 100%;
