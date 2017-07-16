@@ -172,6 +172,12 @@ main>* {
   width: 75vw;
   align-self: center;
   margin: 2em;
+  max-height: 100vh;
+}
+@media screen and (min-width: 768px) {
+  .logo {
+    margin: 0;
+  }
 }
 .motto {
   font-family: font123583;
@@ -297,6 +303,18 @@ form .photo-upload-label {
 }
 form .file-name {
   font-size: 0.5em;
+}
+@media (min-width: 1250px) {
+  form .form-fields {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  form .form-fields .form-field {
+    flex: 0 50%;
+  }
+  form .form-fields .form-field:nth-child(even) label {
+    margin-left: 1em;
+  }
 }
 form .form-field {
   display: flex;

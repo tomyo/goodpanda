@@ -154,34 +154,36 @@
                 <p class="step">1.</p>
                 <p class="info">Información de contacto</p>
               </div>
-              <div class="form-field">
-                <label for="name" class="required">Nombre:</label>
-                <input placeholder="Nombre y apellido" name="name" id="name" required/>
-              </div>
-              <div class="form-field">
-                <label for="company">Empresa:</label>
-                <input placeholder="Empresa" name="company" id="company"/>
-              </div>
-              <div class="form-field">
-                <label for="email" class="required">Mail:</label>
-                <input placeholder="nombre@empresa.cl" name="email" id="email" type="email" required/>
-              </div>
-              <div class="form-field">
-                <label for="phone">Teléfono:</label>
-                <input placeholder="+56 9 0000000" name="phone" id="phone"/>
-              </div>
-              <div class="form-field">
-                <label for="country">País:</label>
-                <select name="country" id="country" onchange="showHideCommune(event)">
-                  <option value="Chile">Chile</option>
-                  <option value="México">México</option>
-                  <option value="Brasil">Brasil</option>
-                  <option value="Perú">Perú</option>
-                </select>
-              </div>
-              <div id="commune-field" class="form-field">
-                <label>Comuna:</label>
-                <select name="commune" id="commune"></select>
+              <div class="form-fields">
+                <div class="form-field">
+                  <label for="name" class="required">Nombre:</label>
+                  <input placeholder="Nombre y apellido" name="name" id="name" required/>
+                </div>
+                <div class="form-field">
+                  <label for="company">Empresa:</label>
+                  <input placeholder="Empresa" name="company" id="company"/>
+                </div>
+                <div class="form-field">
+                  <label for="email" class="required">Mail:</label>
+                  <input placeholder="nombre@empresa.cl" name="email" id="email" type="email" required/>
+                </div>
+                <div class="form-field">
+                  <label for="phone">Teléfono:</label>
+                  <input placeholder="+56 9 0000000" name="phone" id="phone"/>
+                </div>
+                <div class="form-field">
+                  <label for="country">País:</label>
+                  <select name="country" id="country" onchange="showHideCommune(event)">
+                    <option value="Chile">Chile</option>
+                    <option value="México">México</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Perú">Perú</option>
+                  </select>
+                </div>
+                <div id="commune-field" class="form-field">
+                  <label>Comuna:</label>
+                  <select name="commune" id="commune"></select>
+                </div>
               </div>
               <div class="step-info">
                 <p class="step">2.</p>

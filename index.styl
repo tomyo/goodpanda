@@ -95,6 +95,9 @@ main
   width: 75vw
   align-self: center
   margin: 2em
+  @media screen and (min-width: 768px)
+    margin: 0
+  max-height: 100vh
 .motto
   font-family: font123583
   text-align: center
@@ -191,6 +194,15 @@ form
     cursor: pointer
   .file-name
     font-size: 0.5em
+  .form-fields
+    @media (min-width: 1250px)
+      display: flex
+      flex-flow: row wrap
+      .form-field
+        flex: 0 50%
+        &:nth-child(even)
+          label
+            margin-left: 1em
   .form-field
     display: flex
     align-items: baseline
