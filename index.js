@@ -3,7 +3,8 @@ $(document).ready(function(){
   $('.slide').slick({
     autoplay: true,
     arrows: false,
-    dots: true
+    dots: true,
+    swipeToSlide: true
   });
   $('a[href^="#"]:not([href="#"])').click(function(event) {  // link starts with #, but not # alone
     let hash = this.hash;
