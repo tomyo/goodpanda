@@ -481,7 +481,7 @@ footer .email {
   }
   .badges {
     display: flex;
-    margin: 0 1em 1em;
+    margin: 0 2em 1em;
   }
   .badges .badge {
     border: 1px dashed #000;
@@ -513,17 +513,18 @@ footer .email {
     font-family: Lora, serif;
   }
   .badges ~ .call-to-action {
-    display: flex !important;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     background-color: #fe535f;
     text-align: center;
-    margin: 0rem 1rem 3rem;
+    margin: 0rem 2rem 3rem;
     border-radius: 0.5em;
     font-size: 0.5em;
   }
   .badges ~ .call-to-action .button {
     margin-bottom: 1em;
     padding: 0.5em 3em;
+    flex-basis: 6rem;
   }
 }
