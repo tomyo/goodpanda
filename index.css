@@ -416,12 +416,19 @@ footer {
   display: flex;
   flex-flow: column;
   align-items: center;
+  font-size: 0.5em;
 }
 footer > * {
   margin-top: 1em;
 }
+footer .title {
+  color: #fe535f;
+}
+footer .address {
+  font-style: italic;
+}
 footer .phone span {
-  color: #808184;
+  color: #000;
 }
 footer .email {
   color: #fe535f;
