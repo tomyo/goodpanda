@@ -228,17 +228,6 @@ hr {
 .slide .slide-2 {
   background-image: url("img/slide-2.jpg");
 }
-.call-to-action {
-  display: flex;
-  justify-content: center;
-  background-color: #fe535f;
-  text-align: center;
-  margin-bottom: 0;
-}
-.call-to-action .button {
-  margin-bottom: 1em;
-  padding: 0.5em 3em;
-}
 .welcome {
   color: #fe535f;
   margin: 0 2em 3em;
@@ -466,4 +455,75 @@ footer .email {
 .select2-container .select2-dropdown .select2-search__field {
   padding-left: 0.5em;
   border: none;
+}
+@media only screen and (max-width: 1024px) {
+  .badges {
+    display: none;
+  }
+  .badges ~ .call-to-action {
+    display: none;
+  }
+  .call-to-action {
+    display: flex;
+    justify-content: center;
+    background-color: #fe535f;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .call-to-action .button {
+    margin-bottom: 1em;
+    padding: 0.5em 3em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .call-to-action {
+    display: none;
+  }
+  .badges {
+    display: flex;
+    margin: 0 1em 1em;
+  }
+  .badges .badge {
+    border: 2px dashed;
+    border-radius: 10px;
+    flex: 1 1 33%;
+    margin: 0 5px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding: 60px 0 60px 0;
+  }
+  .badges .badge strong {
+    color: #fe535f;
+  }
+  .badges .badge img {
+    max-width: 12vmin;
+    max-height: 13vmin;
+    margin: auto;
+    flex: 1 1 100%;
+  }
+  .badges .badge p {
+    flex: 1 1 100%;
+    font-weight: bold;
+    font-size: 0.7em;
+  }
+  .badges .badge p italic {
+    color: #fe535f;
+    font-style: italic;
+    font-family: Lora, serif;
+  }
+  .badges ~ .call-to-action {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fe535f;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .badges ~ .call-to-action .button {
+    margin-bottom: 1em;
+    padding: 0.5em 3em;
+  }
 }
