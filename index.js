@@ -4,7 +4,7 @@ $(document).ready(function(){
     autoplay: true,
     arrows: false,
     dots: true,
-    swipeToSlide: true
+    pauseOnHover: false
   });
   $('a[href^="#"]:not([href="#"])').click(function(event) {  // link starts with #, but not # alone
     let hash = this.hash;
