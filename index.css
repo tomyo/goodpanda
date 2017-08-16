@@ -484,13 +484,13 @@ footer .email {
     margin: 0 1em 1em;
   }
   .badges .badge {
-    border: 2px dashed;
-    border-radius: 10px;
+    border: 1px dashed #000;
+    border-radius: 0.5em;
     flex: 1 1 33%;
-    margin: 0 5px;
+    margin: 0 0.25em;
     text-align: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: column;
     justify-content: center;
     align-content: center;
     padding: 60px 0 60px 0;
@@ -502,12 +502,10 @@ footer .email {
     max-width: 12vmin;
     max-height: 13vmin;
     margin: auto;
-    flex: 1 1 100%;
   }
   .badges .badge p {
-    flex: 1 1 100%;
     font-weight: bold;
-    font-size: 0.7em;
+    font-size: 0.5em;
   }
   .badges .badge p italic {
     color: #fe535f;
@@ -520,7 +518,9 @@ footer .email {
     justify-content: center;
     background-color: #fe535f;
     text-align: center;
-    margin-bottom: 0;
+    margin: 0rem 1rem 3rem;
+    border-radius: 0.5em;
+    font-size: 0.5em;
   }
   .badges ~ .call-to-action .button {
     margin-bottom: 1em;
