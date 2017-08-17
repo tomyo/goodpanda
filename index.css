@@ -28,18 +28,6 @@ img {
 img {
   border: none;
 }
-html {
-  font-family: Montserrat, sans-serif;
-  font-size: 4vmin;
-  color: #808184;
-}
-body {
-  margin: 0;
-  display: flex;
-  flex-flow: column nowrap;
-  min-height: 100vh;
-  justify-content: space-between;
-}
 a,
 h1,
 h2,
@@ -76,6 +64,26 @@ button:focus,
 label:focus,
 fieldset:focus {
   outline: none;
+}
+html {
+  font-family: Montserrat, sans-serif;
+  font-size: calc(16px + (24 - 16) * (100vmin - 400px) / (800 -400));
+  color: #808184;
+}
+@media screen and (min-width: 1200px) {
+  html h1 {
+    font-size: 3em;
+  }
+}
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+body h3 {
+  font-weight: lighter;
 }
 textarea,
 input,
@@ -165,39 +173,26 @@ main {
   display: flex;
   flex-flow: column nowrap;
 }
-main>* {
-  margin-bottom: 1em;
+main> * + * {
+  margin-top: 3em;
 }
 .logo {
   width: 75vw;
   align-self: center;
-  margin: 2em;
+  margin: 2em 0;
   max-height: 100vh;
 }
 @media screen and (min-width: 768px) {
   .logo {
     margin: 1em 0 0;
-    max-height: 17vh;
+    max-height: 13em;
   }
-}
-.motto {
-  font-family: font123583;
-  text-align: center;
-}
-.motto h1 {
-  color: #fe535f;
-}
-.motto h1 .dotcom {
-  font-weight: normal;
-}
-.motto .tagline {
-  color: #808184;
 }
 hr {
   color: #808184;
 }
 .slide {
-  margin-bottom: 0 !important;
+  margin: 0 !important;
 }
 .slide .slick-dots {
   bottom: 0.5em;
@@ -210,12 +205,25 @@ hr {
   margin: 0.5em !important;
 }
 .slide h1 {
-  margin: 2em 1.5em;
+  margin: 2.5em 1em;
   color: #fff;
+}
+@media screen and (min-width: 1200px) {
+  .slide h1 {
+    margin: 2em;
+  }
 }
 .slide .item {
   height: 75vmin;
   background-size: cover;
+  background-position: center;
+}
+@media screen and (min-width: 1200px) {
+  .slide .item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 }
 .slide .slide-0 {
   background-image: url("img/slide-0.jpg");
@@ -229,9 +237,35 @@ hr {
 .slide .slide-2 {
   background-image: url("img/slide-2.jpg");
 }
+@media screen and (max-width: 1200px) {
+  p br,
+  h3 br {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .show-desktop {
+    display: none;
+  }
+}
 .welcome {
   color: #fe535f;
-  margin: 0 2em 3em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+@media screen and (min-width: 1200px) {
+  .welcome {
+    margin-left: 4em;
+    margin-right: 4em;
+  }
+}
+.welcome>*:first-child {
+  margin-top: 0;
 }
 .change {
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("img/change.png");
@@ -239,24 +273,30 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0;
 }
-.change h2 {
-  margin: 2em;
+.change > * {
+  margin: 2em 0;
   color: #fff;
   text-align: center;
 }
 .features {
-  margin: 4em 2em 0;
+  margin-left: 2em;
+  margin-right: 2em;
 }
-.features div {
-  margin-bottom: 4em;
+@media screen and (min-width: 1200px) {
+  .features {
+    margin-left: 4em;
+    margin-right: 4em;
+  }
+}
+.features> * + * {
+  margin-top: 4em;
 }
 .features div h4 {
   color: #fe535f;
 }
 .features div img {
-  max-width: 22vmin;
+  max-width: 4em;
 }
 .footnote {
   font-size: 0.65em;
@@ -279,9 +319,16 @@ fieldset legend {
   background: #fff;
 }
 form {
-  margin: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
   display: flex;
   flex-flow: column nowrap;
+}
+@media screen and (min-width: 1200px) {
+  form {
+    margin-left: 4em;
+    margin-right: 4em;
+  }
 }
 form .product {
   display: flex;
@@ -293,6 +340,9 @@ form .photo-upload-label {
 }
 form .file-name {
   font-size: 0.5em;
+}
+form .form-fields {
+  margin-top: 2em;
 }
 @media (min-width: 1250px) {
   form .form-fields {
@@ -361,26 +411,23 @@ form hr {
   flex-flow: column nowrap;
   align-items: center;
   color: #fe535f;
-  margin-bottom: 1em;
 }
 .step-info .step {
   font-family: 'Montserrat';
   font-size: 3em;
-  margin-top: 0.5em;
 }
 .step-info .info {
   font-weight: bold;
   font-style: italic;
   font-family: Lora, serif;
   font-size: 1.2em;
-  margin-top: 0.5em;
   border-bottom: 0.1em solid;
   padding-bottom: 0.2em;
 }
 .add-other {
-  margin-top: inherit;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  margin-top: 1em;
 }
 .add-other button {
   border: none;
@@ -412,12 +459,13 @@ header {
   height: 5vmin;
 }
 footer {
+  margin-top: 3em;
   padding-bottom: 1em;
   background: #f7f6f6;
   display: flex;
   flex-flow: column;
   align-items: center;
-  font-size: 0.5em;
+  font-size: 0.7em;
 }
 footer > * {
   margin-top: 1em;
@@ -476,10 +524,10 @@ footer .email {
     justify-content: center;
     background-color: #fe535f;
     text-align: center;
-    margin-bottom: 0;
+    margin-top: 0;
   }
   .call-to-action .button {
-    margin-bottom: 1em;
+    margin: 1em 0;
     padding: 0.5em 3em;
   }
 }
@@ -489,19 +537,22 @@ footer .email {
   }
   .badges {
     display: flex;
-    margin: 0 2em 1em;
+    margin-left: 4em;
+    margin-right: 4em;
   }
   .badges .badge {
     border: 1px dashed #000;
     border-radius: 0.5em;
     flex: 1 1 33%;
-    margin: 0 0.25em;
     text-align: center;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-content: center;
     padding: 60px 0 60px 0;
+  }
+  .badges .badge:nth-child(2) {
+    margin: 0 1em;
   }
   .badges .badge strong {
     color: #fe535f;
@@ -513,7 +564,6 @@ footer .email {
   }
   .badges .badge p {
     font-weight: bold;
-    font-size: 0.5em;
   }
   .badges .badge p italic {
     color: #fe535f;
@@ -526,13 +576,13 @@ footer .email {
     justify-content: center;
     background-color: #fe535f;
     text-align: center;
-    margin: 0rem 2rem 3rem;
+    margin-left: 4em;
+    margin-right: 4em;
     border-radius: 0.5em;
-    font-size: 0.5em;
   }
   .badges ~ .call-to-action .button {
-    margin-bottom: 1em;
+    margin: 1em 0;
     padding: 0.5em 3em;
-    flex-basis: 6rem;
+    flex-basis: 6em;
   }
 }

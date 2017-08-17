@@ -8,9 +8,10 @@ placeholder-color = #b7b6b6
 third-color = #EAEAEA
 primary-background = white
 secondary-background = #f7f6f6
-base-font-size = 4vmin//calc(16px + (24 - 16) * (100vmin - 400px)/(800-400))//inherit //3vmin
+base-font-size = calc(16px + (24 - 16) * (100vmin - 400px)/(800-400))//inherit //3vmin
 first-font-family = Lora, serif
 second-font-family = Montserrat, sans-serif
+between-sections-margin = 3em
 
 // Helpers
 set-placeholder-color(n)
@@ -25,12 +26,36 @@ set-placeholder-color(n)
   &:-ms-input-placeholder
     color: n
 
+hide-mobile()
+  @media screen and (max-width:1200px)
+    display: none
+
+hide-desktop()
+  @media screen and (min-width:1200px)
+    display: none
+
 // Default styles
+a, h1, h2, h3, h4, h5, h6, p, hr, input, textarea, select, button, label, fieldset
+  font-family: inherit
+  color: inherit
+  text-decoration: none
+  // margin-top: 0
+  margin-top: 1em
+  &:focus
+    outline: none
 html
-  // min-height: 100vh
   font-family: second-font-family
   font-size: base-font-size
   color: second-color
+  // h3
+  //   font-size: 1.5em//1.618em
+  //   font-weight: lighter
+  // h2
+  //   font-size: 2.25em//2.618em
+  //   font-weight: lighter
+  h1
+    @media screen and (min-width:1200px)
+      font-size: 3em//4.236em
 body
   margin: 0
   display: flex
@@ -38,14 +63,9 @@ body
   flex-flow: column nowrap
   min-height: 100vh
   justify-content: space-between
-a, h1, h2, h3, h4, h5, h6, p, hr, input, textarea, select, button, label, fieldset
-  font-family: inherit
-  color: inherit
-  text-decoration: none
-  margin-top: 1em
-  // line-height: 1.5em
-  &:focus
-    outline: none
+  h3
+    font-weight: lighter
+
 textarea, input, select
   background-color: secondary-background
   set-placeholder-color placeholder-color
@@ -78,7 +98,6 @@ input
     box-shadow: 0 0 1em 1px #DDDDDD
 
 // Styles
-
 #thanks
   p
     color: first-color
@@ -89,30 +108,20 @@ input
 main
   display: flex
   flex-flow: column nowrap
-  &>*
-    margin-bottom: 1em
+  &> * + *
+    margin-top: between-sections-margin
 .logo
   width: 75vw
   align-self: center
-  margin: 2em
+  margin: 2em 0
   max-height: 100vh
   @media screen and (min-width: 768px)
     margin: 1em 0 0
-    max-height: 17vh
-
-.motto
-  font-family: font123583
-  text-align: center
-  h1
-    color: first-color
-    .dotcom
-      font-weight: normal
-  .tagline
-    color: second-color
+    max-height: 13em
 hr
   color: second-color
-
 .slide
+  margin: 0 !important // override slick theme
   .slick-dots  // override slick theme
     bottom: 0.5em
     button:before
@@ -120,13 +129,19 @@ hr
       font-size: 1rem
     li
       margin: 0.5em !important
-  margin-bottom: 0 !important // override slick theme
   h1
-    margin: 2em 1.5em
+    margin: 2.5em 1em
+    @media screen and (min-width: 1200px)
+      margin: 2em
     color: primary-background
   .item
     height: 75vmin
     background-size: cover
+    background-position: center
+    @media screen and (min-width:1200px)
+      display: flex
+      justify-content: flex-end
+      align-items: flex-end
   .slide-0
     h1
       margin-top: 1.5em
@@ -136,30 +151,46 @@ hr
   .slide-2
     background-image: url('img/slide-2.jpg')
 
+p,h3
+  br
+    hide-mobile()
+.hide-desktop
+  hide-desktop()
+.show-desktop
+  hide-mobile()
+
+responsive-margins()
+  margin-left: 2em
+  margin-right: 2em
+  @media screen and (min-width: 1200px)
+    margin-left: 4em
+    margin-right: 4em
 
 .welcome
   color: first-color
-  margin: 0 2em 3em
+  responsive-margins()
+  &>*:first-child
+    margin-top: 0
 .change
   background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('img/change.png')
   background-size: cover
   display: flex
   justify-content: center
   align-items: center
-  margin-bottom: 0
-  h2
-    margin: 2em
+  > *
+    margin: 2em 0
     color: primary-background
     text-align: center
 
 .features
-  margin: 4em 2em 0
+  responsive-margins()
+  &> * + *
+    margin-top: 4em
   div
-    margin-bottom: 4em
     h4
       color: first-color
     img
-      max-width: 22vmin
+      max-width: 4em
 .footnote
   font-size: 0.65em
   color: first-color
@@ -177,7 +208,7 @@ fieldset
     padding: 0 1em
     background: white
 form
-  margin: 1em
+  responsive-margins()
   display: flex
   flex-flow: column nowrap
   .product
@@ -189,6 +220,7 @@ form
   .file-name
     font-size: 0.5em
   .form-fields
+    margin-top: 2em
     @media (min-width: 1250px)
       display: flex
       flex-flow: row wrap
@@ -239,24 +271,23 @@ form
   flex-flow: column nowrap
   align-items: center
   color: first-color
-  margin-bottom: 1em
   .step
     font-family: 'Montserrat'
     font-size: 3em
-    margin-top: 0.5em
+    // margin-top: 0.5em
   .info
     font-weight: bold
     font-style: italic
     font-family: first-font-family
     font-size: 1.2em
-    margin-top: 0.5em
+    // margin-top: 0.5em
     border-bottom: 0.1em solid
     padding-bottom: 0.2em
 
 .add-other
-  margin-top: inherit
-  display: flex
+  display: inline-flex
   align-items: center
+  margin-top: 1em
   button
     border: none
     margin: 0
@@ -284,6 +315,7 @@ header
   height: 5vmin
 
 footer
+  margin-top: between-sections-margin
   padding-bottom: 1em
   > *
     margin-top: 1em
@@ -291,7 +323,7 @@ footer
   display: flex
   flex-flow: column
   align-items: center
-  font-size: 0.5em
+  font-size: 0.7em
   .title
     color: first-color
   .address
@@ -336,9 +368,9 @@ footer
     justify-content: center
     background-color: first-color
     text-align: center
-    margin-bottom: 0
+    margin-top: 0
     .button
-      margin-bottom: 1em
+      margin: 1em 0
       padding: 0.5em 3em
 
 @media only screen and (min-width: 1024px)
@@ -346,12 +378,14 @@ footer
     display: none
   .badges
     display: flex
-    margin: 0 2em 1em
+    margin-left: 4em
+    margin-right: 4em
     .badge
       border: 1px dashed black
       border-radius: 0.5em
       flex: 1 1 33%
-      margin: 0 0.25em
+      &:nth-child(2)
+        margin: 0 1em
       text-align: center
       display: flex
       flex-flow: column
@@ -366,7 +400,6 @@ footer
         margin: auto
       p
         font-weight: bold
-        font-size: 0.5em
         italic
           color: first-color
           font-style: italic
@@ -377,10 +410,11 @@ footer
       justify-content: center
       background-color: first-color
       text-align: center
-      margin: 0rem 2rem 3rem
+      margin-left: 4em
+      margin-right: 4em
       border-radius: 0.5em
-      font-size: 0.5em
+      // font-size: 0.5em
       .button
-        margin-bottom: 1em
+        margin: 1em 0
         padding: 0.5em 3em
-        flex-basis: 6rem
+        flex-basis: 6em
