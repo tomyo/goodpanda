@@ -8,10 +8,11 @@ placeholder-color = #b7b6b6
 third-color = #EAEAEA
 primary-background = white
 secondary-background = #f7f6f6
-base-font-size = calc(16px + (24 - 16) * (100vmin - 400px)/(800-400))//inherit //3vmin
+base-font-size = calc(16px + (24 - 16) * (100vmin - 400px)/(30800-400))//inherit //3vmin
+//Note: In the example above, 12px is the minimum font-size and 24px is the maximum. 400px is the start of the viewport range and 800px is where it should stop scaling. The inclusion or absence of the units after each value is important.
 first-font-family = Lora, serif
 second-font-family = Montserrat, sans-serif
-between-sections-margin = 3em
+between-sections-margin = 5em
 
 // Helpers
 set-placeholder-color(n)
@@ -27,35 +28,40 @@ set-placeholder-color(n)
     color: n
 
 hide-mobile()
-  @media screen and (max-width:1200px)
-    display: none
+  @media screen and (max-width:1024px)
+    display: none !important
 
 hide-desktop()
-  @media screen and (min-width:1200px)
-    display: none
+  @media screen and (min-width:1024px)
+    display: none !important
+
+responsive-margins()
+  margin = 2em
+  margin-left: margin
+  margin-right: margin
+  @media screen and (min-width: 1024px)
+    // margin = 8em
+    // margin-left: margin
+    // margin-right: margin
+    align-self: center
+    width: 80vw
+    // max-width: 1200px
+
 
 // Default styles
-a, h1, h2, h3, h4, h5, h6, p, hr, input, textarea, select, button, label, fieldset
-  font-family: inherit
-  color: inherit
-  text-decoration: none
-  // margin-top: 0
-  margin-top: 1em
-  &:focus
-    outline: none
 html
   font-family: second-font-family
   font-size: base-font-size
   color: second-color
-  // h3
-  //   font-size: 1.5em//1.618em
-  //   font-weight: lighter
-  // h2
-  //   font-size: 2.25em//2.618em
-  //   font-weight: lighter
+  h3
+    font-size: 1.5em//1.618em
+    font-weight: lighter
+  h2
+    font-size: 2.5em//2.618em
+    font-weight: lighter
   h1
-    @media screen and (min-width:1200px)
-      font-size: 3em//4.236em
+    @media screen and (min-width:1024px)
+      font-size: 3.2em//4.236em
 body
   margin: 0
   display: flex
@@ -65,6 +71,16 @@ body
   justify-content: space-between
   h3
     font-weight: lighter
+  a, h1, h2, h3, h4, h5, h6, p, hr, input, textarea, select, button, label, fieldset
+    font-family: inherit
+    color: inherit
+    text-decoration: none
+    // margin-top: 0
+    margin-top: 1em
+    &:focus
+      outline: none
+    &.small
+      font-size: .8em
 
 textarea, input, select
   background-color: secondary-background
@@ -111,13 +127,11 @@ main
   &> * + *
     margin-top: between-sections-margin
 .logo
-  width: 75vw
   align-self: center
-  margin: 2em 0
-  max-height: 100vh
-  @media screen and (min-width: 768px)
-    margin: 1em 0 0
-    max-height: 13em
+  max-height: 33vh
+  // @media screen and (min-width: 768px)
+  //   margin: 1em 0 0
+  //   max-height: 25vmin
 hr
   color: second-color
 .slide
@@ -131,27 +145,28 @@ hr
       margin: 0.5em !important
   h1
     margin: 2.5em 1em
-    @media screen and (min-width: 1200px)
-      margin: 2em
+    @media screen and (min-width: 1024px)
+      margin: 3em
     color: primary-background
   .item
-    height: 75vmin
+    height: 60vmin
+    min-height: 20em
     background-size: cover
     background-position: center
-    @media screen and (min-width:1200px)
+    @media screen and (min-width:1024px)
       display: flex
       justify-content: flex-end
       align-items: flex-end
   .slide-0
-    h1
-      margin-top: 1.5em
+    // h1
+    //   margin-top: 1.5em
     background-image: url('img/slide-0.jpg')
   .slide-1
     background-image: url('img/slide-1.jpg')
   .slide-2
     background-image: url('img/slide-2.jpg')
 
-p,h3
+p
   br
     hide-mobile()
 .hide-desktop
@@ -159,15 +174,9 @@ p,h3
 .show-desktop
   hide-mobile()
 
-responsive-margins()
-  margin-left: 2em
-  margin-right: 2em
-  @media screen and (min-width: 1200px)
-    margin-left: 4em
-    margin-right: 4em
-
 .welcome
   color: first-color
+  line-height: 1.3
   responsive-margins()
   &>*:first-child
     margin-top: 0
@@ -214,6 +223,7 @@ form
   .product
     display: flex
     flex-flow: column nowrap
+    margin-top: 2em
   .photo-upload-label
     text-align: center
     cursor: pointer
@@ -262,7 +272,6 @@ form
       font-weight: normal
   hr
     border: 1px dashed
-    margin-top: 2em
     width: 100%
 .strong
   font-weight: bold
@@ -287,12 +296,20 @@ form
 .add-other
   display: inline-flex
   align-items: center
-  margin-top: 1em
+  margin-top: 5em
+  font-size: .618em
   button
     border: none
     margin: 0
+    color: first-color
   .text
     margin-left: 1em
+    margin-top: 0
+&button[type=submit]
+  margin-top: 2em
+  color: first-color
+  &:active
+    color: white
 
 .required:after
   content: "*"
@@ -358,63 +375,48 @@ footer
         padding-left: 0.5em
         border: none
 
-@media only screen and (max-width: 1024px)
-  .badges
-    display: none
-    ~ .call-to-action
-      display: none
-  .call-to-action
-    display: flex
-    justify-content: center
-    background-color: first-color
-    text-align: center
-    margin-top: 0
-    .button
-      margin: 1em 0
-      padding: 0.5em 3em
+.call-to-action
+  display: flex
+  justify-content: center
+  background-color: first-color
+  text-align: center
+  margin-top: 0
+  .button
+    margin: 1em 0
+    padding: 0.5em 10%
+  @media screen and (min-width:1024px)
+    margin-top: between-sections-margin
+    border-radius: 1em
+    responsive-margins()
 
-@media only screen and (min-width: 1024px)
-  .call-to-action
-    display: none
-  .badges
+.badges
+  display: none
+  @media screen and (min-width: 1024px)
     display: flex
-    margin-left: 4em
-    margin-right: 4em
-    .badge
-      border: 1px dashed black
-      border-radius: 0.5em
-      flex: 1 1 33%
-      &:nth-child(2)
-        margin: 0 1em
-      text-align: center
-      display: flex
-      flex-flow: column
-      justify-content: center
-      align-content: center
-      padding: 60px 0 60px 0
-      strong
+    responsive-margins()
+  .badge
+    border: 1px dashed black
+    border-radius: 1em
+    flex: 1 1 33%
+    &:nth-child(2)
+      margin: 0 2em
+    text-align: center
+    display: flex
+    flex-flow: column
+    justify-content: center
+    align-content: center
+    padding: 3em 0
+    strong
+      color: first-color
+    img
+      img-max-size = 9vmin
+      max-width: img-max-size
+      max-height: img-max-size
+      margin: auto
+    p
+      font-weight: 500
+      italic
         color: first-color
-      img
-        max-width: 12vmin
-        max-height: 13vmin
-        margin: auto
-      p
-        font-weight: bold
-        italic
-          color: first-color
-          font-style: italic
-          font-family: Lora, serif
-    ~ .call-to-action
-      display: flex
-      flex-wrap: wrap
-      justify-content: center
-      background-color: first-color
-      text-align: center
-      margin-left: 4em
-      margin-right: 4em
-      border-radius: 0.5em
-      // font-size: 0.5em
-      .button
-        margin: 1em 0
-        padding: 0.5em 3em
-        flex-basis: 6em
+        font-style: italic
+        font-weight: lighter
+        font-family: Lora, serif

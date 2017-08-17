@@ -28,51 +28,22 @@ img {
 img {
   border: none;
 }
-a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-hr,
-input,
-textarea,
-select,
-button,
-label,
-fieldset {
-  font-family: inherit;
-  color: inherit;
-  text-decoration: none;
-  margin-top: 1em;
-}
-a:focus,
-h1:focus,
-h2:focus,
-h3:focus,
-h4:focus,
-h5:focus,
-h6:focus,
-p:focus,
-hr:focus,
-input:focus,
-textarea:focus,
-select:focus,
-button:focus,
-label:focus,
-fieldset:focus {
-  outline: none;
-}
 html {
   font-family: Montserrat, sans-serif;
-  font-size: calc(16px + (24 - 16) * (100vmin - 400px) / (800 -400));
+  font-size: calc(16px + (24 - 16) * (100vmin - 400px) / (30800 -400));
   color: #808184;
 }
-@media screen and (min-width: 1200px) {
+html h3 {
+  font-size: 1.5em;
+  font-weight: lighter;
+}
+html h2 {
+  font-size: 2.5em;
+  font-weight: lighter;
+}
+@media screen and (min-width: 1024px) {
   html h1 {
-    font-size: 3em;
+    font-size: 3.2em;
   }
 }
 body {
@@ -84,6 +55,60 @@ body {
 }
 body h3 {
   font-weight: lighter;
+}
+body a,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p,
+body hr,
+body input,
+body textarea,
+body select,
+body button,
+body label,
+body fieldset {
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+  margin-top: 1em;
+}
+body a:focus,
+body h1:focus,
+body h2:focus,
+body h3:focus,
+body h4:focus,
+body h5:focus,
+body h6:focus,
+body p:focus,
+body hr:focus,
+body input:focus,
+body textarea:focus,
+body select:focus,
+body button:focus,
+body label:focus,
+body fieldset:focus {
+  outline: none;
+}
+body a.small,
+body h1.small,
+body h2.small,
+body h3.small,
+body h4.small,
+body h5.small,
+body h6.small,
+body p.small,
+body hr.small,
+body input.small,
+body textarea.small,
+body select.small,
+body button.small,
+body label.small,
+body fieldset.small {
+  font-size: 0.8em;
 }
 textarea,
 input,
@@ -174,19 +199,11 @@ main {
   flex-flow: column nowrap;
 }
 main> * + * {
-  margin-top: 3em;
+  margin-top: 5em;
 }
 .logo {
-  width: 75vw;
   align-self: center;
-  margin: 2em 0;
-  max-height: 100vh;
-}
-@media screen and (min-width: 768px) {
-  .logo {
-    margin: 1em 0 0;
-    max-height: 13em;
-  }
+  max-height: 33vh;
 }
 hr {
   color: #808184;
@@ -208,17 +225,18 @@ hr {
   margin: 2.5em 1em;
   color: #fff;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .slide h1 {
-    margin: 2em;
+    margin: 3em;
   }
 }
 .slide .item {
-  height: 75vmin;
+  height: 60vmin;
+  min-height: 20em;
   background-size: cover;
   background-position: center;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .slide .item {
     display: flex;
     justify-content: flex-end;
@@ -228,40 +246,37 @@ hr {
 .slide .slide-0 {
   background-image: url("img/slide-0.jpg");
 }
-.slide .slide-0 h1 {
-  margin-top: 1.5em;
-}
 .slide .slide-1 {
   background-image: url("img/slide-1.jpg");
 }
 .slide .slide-2 {
   background-image: url("img/slide-2.jpg");
 }
-@media screen and (max-width: 1200px) {
-  p br,
-  h3 br {
-    display: none;
+@media screen and (max-width: 1024px) {
+  p br {
+    display: none !important;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .hide-desktop {
-    display: none;
+    display: none !important;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .show-desktop {
-    display: none;
+    display: none !important;
   }
 }
 .welcome {
   color: #fe535f;
+  line-height: 1.3;
   margin-left: 2em;
   margin-right: 2em;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .welcome {
-    margin-left: 4em;
-    margin-right: 4em;
+    align-self: center;
+    width: 80vw;
   }
 }
 .welcome>*:first-child {
@@ -283,10 +298,10 @@ hr {
   margin-left: 2em;
   margin-right: 2em;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .features {
-    margin-left: 4em;
-    margin-right: 4em;
+    align-self: center;
+    width: 80vw;
   }
 }
 .features> * + * {
@@ -324,15 +339,16 @@ form {
   display: flex;
   flex-flow: column nowrap;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   form {
-    margin-left: 4em;
-    margin-right: 4em;
+    align-self: center;
+    width: 80vw;
   }
 }
 form .product {
   display: flex;
   flex-flow: column nowrap;
+  margin-top: 2em;
 }
 form .photo-upload-label {
   text-align: center;
@@ -400,7 +416,6 @@ form .priority .description {
 }
 form hr {
   border: 1px dashed;
-  margin-top: 2em;
   width: 100%;
 }
 .strong {
@@ -427,14 +442,24 @@ form hr {
 .add-other {
   display: inline-flex;
   align-items: center;
-  margin-top: 1em;
+  margin-top: 5em;
+  font-size: 0.618em;
 }
 .add-other button {
   border: none;
   margin: 0;
+  color: #fe535f;
 }
 .add-other .text {
   margin-left: 1em;
+  margin-top: 0;
+}
+button[type=submit] {
+  margin-top: 2em;
+  color: #fe535f;
+}
+button[type=submit]:active {
+  color: #fff;
 }
 .required:after {
   content: "*";
@@ -459,7 +484,7 @@ header {
   height: 5vmin;
 }
 footer {
-  margin-top: 3em;
+  margin-top: 5em;
   padding-bottom: 1em;
   background: #f7f6f6;
   display: flex;
@@ -512,77 +537,75 @@ footer .email {
   padding-left: 0.5em;
   border: none;
 }
-@media only screen and (max-width: 1024px) {
-  .badges {
-    display: none;
-  }
-  .badges ~ .call-to-action {
-    display: none;
-  }
+.call-to-action {
+  display: flex;
+  justify-content: center;
+  background-color: #fe535f;
+  text-align: center;
+  margin-top: 0;
+}
+.call-to-action .button {
+  margin: 1em 0;
+  padding: 0.5em 10%;
+}
+@media screen and (min-width: 1024px) {
   .call-to-action {
-    display: flex;
-    justify-content: center;
-    background-color: #fe535f;
-    text-align: center;
-    margin-top: 0;
-  }
-  .call-to-action .button {
-    margin: 1em 0;
-    padding: 0.5em 3em;
+    margin-top: 5em;
+    border-radius: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (min-width: 1024px) {
   .call-to-action {
-    display: none;
+    align-self: center;
+    width: 80vw;
   }
+}
+.badges {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
   .badges {
     display: flex;
-    margin-left: 4em;
-    margin-right: 4em;
+    margin-left: 2em;
+    margin-right: 2em;
   }
-  .badges .badge {
-    border: 1px dashed #000;
-    border-radius: 0.5em;
-    flex: 1 1 33%;
-    text-align: center;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-content: center;
-    padding: 60px 0 60px 0;
-  }
-  .badges .badge:nth-child(2) {
-    margin: 0 1em;
-  }
-  .badges .badge strong {
-    color: #fe535f;
-  }
-  .badges .badge img {
-    max-width: 12vmin;
-    max-height: 13vmin;
-    margin: auto;
-  }
-  .badges .badge p {
-    font-weight: bold;
-  }
-  .badges .badge p italic {
-    color: #fe535f;
-    font-style: italic;
-    font-family: Lora, serif;
-  }
-  .badges ~ .call-to-action {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #fe535f;
-    text-align: center;
-    margin-left: 4em;
-    margin-right: 4em;
-    border-radius: 0.5em;
-  }
-  .badges ~ .call-to-action .button {
-    margin: 1em 0;
-    padding: 0.5em 3em;
-    flex-basis: 6em;
+}
+.badges .badge {
+  border: 1px dashed #000;
+  border-radius: 1em;
+  flex: 1 1 33%;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  padding: 3em 0;
+}
+.badges .badge:nth-child(2) {
+  margin: 0 2em;
+}
+.badges .badge strong {
+  color: #fe535f;
+}
+.badges .badge img {
+  max-width: 9vmin;
+  max-height: 9vmin;
+  margin: auto;
+}
+.badges .badge p {
+  font-weight: 500;
+}
+.badges .badge p italic {
+  color: #fe535f;
+  font-style: italic;
+  font-weight: lighter;
+  font-family: Lora, serif;
+}
+@media screen and (min-width: 1024px) and (min-width: 1024px) {
+  .badges {
+    align-self: center;
+    width: 80vw;
   }
 }

@@ -34,7 +34,7 @@ $(document).ready(function(){
   }
   $("#commune").select2({
     placeholder: 'Seleccione una comuna',
-    data: getSelect2CommuneOptions(),
+    data: regions,//getSelect2CommuneOptions(),
   });
   // $("#country").select2({
   //   minimumResultsForSearch: Infinity
@@ -84,7 +84,12 @@ showHideCommune = (event) => {
     commune.classList.add("hidden");
   }
 }
-
+regions = ["Metropolitana de Santiago","Atacama", "Antofagasta",
+           "Arica Y Parinacota", "Tarapaca", "Coquimbo", "Valparaíso",
+           "Libertador Gral. Bernardo O`Higgins", "Maule", "Biobío",
+           "La Araucanía", "Los Ríos", "Los Lagos",
+           "Aysén del Gral. Carlos Ibáñez del Campo",
+           "Magallares y Antártica Chilena"]
 regionsAndCommunes = {
   "Atacama": ["Alto del Carmen", "Caldera", "Chañaral", "Copiapó", "Diego de Almagro", "El Salvador", "Freirina", "Huasco", "Paipote", "Tierra Amarilla", "Vallenar"],
   "Antofagasta": ["Antofagasta", "Calama", "María Elena", "Mejillones", "San Pedro De Atacama", "Sierra Gorda", "Taltal", "Tocopilla"],

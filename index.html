@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,700i|Montserrat:300,400,500,700,800|Viga" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700i|Montserrat:300,400,500,700,800|Viga" rel="stylesheet">
   <!-- DIN Next LT Pro regular: font123583 -->
   <link href="https://www.fontify.me/wf/bffc39a8657036d2df4860a4951ea25c" rel="stylesheet" type="text/css">
   <!-- DIN Next LT Pro bold: font122629 -->
@@ -64,8 +64,8 @@
       </h1>
     </a>
   </div>
-  <div class="call-to-action">
-    <a href="#form" class="button">COTIZACIÓN <br />INTELIGENTE</a>
+  <div class="call-to-action hide-desktop">
+    <a href="#form" class="button small">COTIZACIÓN <br />INTELIGENTE</a>
   </div>
   <div class="welcome">
     <h1>Bienvenido!</h1>
@@ -89,8 +89,8 @@
         <p>PRODUCTOS <strong>100%</strong> ECO-FRIENDLY<br /><italic>por un mundo mejor<italic></p>
         </div>
       </div>
-      <div class="call-to-action">
-        <a href="#form" class="button">COTIZACIÓN <br />INTELIGENTE</a>
+      <div class="call-to-action show-desktop">
+        <a href="#form" class="button small">COTIZACIÓN <br />INTELIGENTE</a>
       </div>
       <div class="change">
         <h1>Cambiamos la forma<br />de hacer negocios</h1>
@@ -128,7 +128,7 @@
             Maneja tus costos de acuerdo a los tiempos de entrega.<br />
             <strong>Nacional v/s Internacional:</strong>
           </p>
-          <p class="button center active">
+          <p class="button center active small">
             Tiempo v/s Costos.
           </p>
         </div>
@@ -212,8 +212,8 @@
             </select>
           </div>
           <div id="commune-field" class="form-field">
-            <label>Comuna:</label>
-            <select name="commune" id="commune"></select>
+            <label>Región:</label>
+            <select name="region" id="commune"></select>
           </div>
         </div>
         <div class="step-info">
@@ -270,11 +270,12 @@
         </div>
         <div class="add-other">
           <!-- <button type="button"><span>+</span>Agregar otro</button> -->
-          <button type="button" onclick="addOther()">
+          <button id="add-other" type="button" onclick="addOther()">
             <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
           </button>
-          <span class="text">AGREGAR OTRO</span>
+          <label for="add-other" class="text">AGREGAR NUEVO PRODUCTO</label>
         </div>
+        <hr />
         <button type="submit">ENVIAR COTIZACIÓN<br />INTELIGENTE</button>
       </form>
       <fieldset id="thanks" class="show-on-thanks hidden">
@@ -291,12 +292,12 @@
       <p class="address">
         Nueva de Lyon 0170, Of 315, Providencia, Santiago, Chile.
       </p>
-
-        <a class="phone">
-          <!-- <i class="fa fa-phone" aria-hidden="true"></i> -->
-          <span>Teléfono:</span>
-          +569 63000912
-        </a>
+      <p class="phone">
+        <!-- <i class="fa fa-phone" aria-hidden="true"></i> -->
+        <span>Teléfono:</span>
+        <a class="hide-desktop" href="tel:+56963000912">+569 63000912</a>
+        <a class="show-desktop">+569 63000912</a>
+      </p>
       <a href="mailto:hola@goodpanda.com" target="_blank" class="email">
         <!-- <i class="fa fa-envelope-o" aria-hidden="true"></i> -->
         <span>HOLA@GOODPANDA.COM</span>
